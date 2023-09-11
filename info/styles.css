@@ -1,0 +1,123 @@
+/* Reset some default styles */
+body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif, Arial;
+}
+
+a {
+    text-decoration: underline;
+    color: #000000;
+}
+
+/* Style the header */
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 36px;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Style the project section */
+#main_root_site {
+    padding: 40px;
+}
+
+.project p {
+    margin-top: 20px;
+}
+
+.project img {
+    max-width: 100%;
+}
+
+.project h3 {
+    margin-top: 10px;
+}
+
+.project a {
+    display: inline-block;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* Style the about section */
+#about {
+    background-color: #f9f9f9;
+    padding: 40px;
+}
+
+/* Style the contact section */
+#contact {
+    padding: 40px;
+}
+
+/* Style the footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 24px;
+    }
+
+    nav ul li {
+        margin-right: 10px;
+    }
+
+    .project {
+        margin-bottom: 20px;
+    }
+
+    .project h3 {
+        font-size: 18px;
+    }
+
+    .project a {
+        padding: 8px 16px;
+    }
+
+    #projects {
+        padding: 20px;
+    }
+
+    #about {
+        padding: 20px;
+    }
+
+    #contact {
+        padding: 20px;
+    }
+
+    footer {
+        padding: 5px 0;
+    }
+}
