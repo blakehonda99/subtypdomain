@@ -76,12 +76,12 @@ font-weight: bold;
   font-size: 1.5em;
 }
 
-.social a:hover .fab {
+.social a:hover {
   opacity: 50%;
   transition: opacity 0.2s ease-in-out;
 }
 
-.social a:not(:hover) .fab {
+.social a:not(:hover) {
   transition: opacity 0.2s ease-in-out;
 }
 
