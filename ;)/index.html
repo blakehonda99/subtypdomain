@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Gallery</title>
+    <style>
+        body {
+            background-color: #333;
+            margin: 3vh;
+        }
+
+        .media-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .media-item {
+            width: calc(33.33% - 20px);
+            margin-bottom: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .media-item:hover {
+            transform: scale(1.05);
+        }
+
+        .media-item iframe,
+        .media-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: scale-down;
+            border: none;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="media-container" id="mediaContainer">
+        <!-- Media items will be dynamically added here using JavaScript -->
+    </div>
+
+    <script>
+        // Media data with links and types (video or image)
+        const mediaData = [
+            { type: 'video', src: "https://firebasestorage.googleapis.com/v0/b/lurbdisk.appspot.com/o/files%2F5vcUjKtJCVPnJ4rGN4NqIS8CVMg1%2Fyoutube.com__22_-_Boykisser_-_-3_JSchlatt_2001_New_York_September_Im_not_going_to_say_the_date_Edition.mp4?alt=media&token=827f976d-176b-4b73-b0e2-677b8e185b3c" },
+            { type: 'video', src: "https://firebasestorage.googleapis.com/v0/b/lurbdisk.appspot.com/o/files%2F5vcUjKtJCVPnJ4rGN4NqIS8CVMg1%2F572992fa364f8eae7b654b12396ab9c2.webm?alt=media&token=d478b884-5f9c-4a5b-9e93-09c04f05ab9a" },
+            { type: 'video', src: "https://firebasestorage.googleapis.com/v0/b/lurbdisk.appspot.com/o/files%2F5vcUjKtJCVPnJ4rGN4NqIS8CVMg1%2F6f64223c3beec8eafee3b93cf47e3f52.webm?alt=media&token=f77b7eed-a504-45b8-9d39-a2fc296d25e1" },
+            { type: 'image', src: "https://cdn3.emoji.gg/emojis/5844-boykisser.png" },
+            { type: 'image', src: "https://media.tenor.com/900nDezRNZIAAAAC/boyksser-mauzymice.gif" },
+            { type: 'image', src: "https://media.tenor.com/SSlmnksf6YIAAAAC/boy-kisser-blushing.gif" }
+            // Add more media data as needed
+        ];
+
+        // Function to create media items and add them to the container
+        function createMediaItems() {
+            const container = document.getElementById("mediaContainer");
+
+            mediaData.forEach(media => {
+                const mediaItem = document.createElement("div");
+                mediaItem.className = "media-item";
+
+                if (media.type === 'video') {
+                    const iframe = document.createElement("iframe");
+                    iframe.src = media.src;
+                    iframe.frameBorder = "0";
+                    iframe.allowFullscreen = true;
+                    mediaItem.appendChild(iframe);
+                } else if (media.type === 'image') {
+                    const img = document.createElement("img");
+                    img.src = media.src;
+                    mediaItem.appendChild(img);
+                }
+
+                container.appendChild(mediaItem);
+            });
+        }
+
+        // Run the function when the page is loaded
+        window.onload = createMediaItems;
+    </script>
+</body>
+</html>
